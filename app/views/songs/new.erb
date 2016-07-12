@@ -1,3 +1,14 @@
+<% if @song && @song.errors.any? %>
+  <div>
+    <strong>Some issues with your song, please fix them:</strong>
+    <ul>
+      <% @song.errors.songs.each do |song| %>
+        <li><%= song %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <form method="post" action="/songs">
   <div>
     <label>Author:</label>
